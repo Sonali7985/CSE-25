@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of N Numbers</title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color:rgb(88, 196, 228);
+        }
+        
+
+        input {
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color:green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        </style>
+</head>
+<body>
+    <h2>Sum of N Numbers</h2>
+    <input type="number" id="nInput" placeholder="Enter N">
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p id="sumResult"></p>
+
+    <script>
+        function calculateSum() {
+            let n = parseInt(document.getElementById("nInput").value);
+            let resultText = document.getElementById("sumResult");
+
+            if (isNaN(n) || n < 1) {
+                resultText.textContent = "Please enter a positive integer greater than 0.";
+                return;
+            }
+
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+            }
+
+            resultText.textContent = `The sum of numbers from 1 to ${n} is: ${sum}`;
+        }
+    </script>
+</body>
+</html>
